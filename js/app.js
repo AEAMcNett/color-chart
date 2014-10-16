@@ -133,7 +133,7 @@ angular.module('colorApp', ['ui.bootstrap', 'ngClipboard'])
               ['PaleTurquoise','#AFEEEE','rgb(175,238,238)'],
               ['PowderBlue','#B0E0E6','rgb(176,224,230)'],
               ['LightSteelBlue','#B0C4DE','rgb(176,196,222)'],
-              ['Lavander','#E6E6FA','rgb(230,230,250)'],
+              ['Lavender','#E6E6FA','rgb(230,230,250)'],
               ['MediumSlateBlue','#7B68EE','rgb(123,104,238)'],
               ['SlateBlue','#6A5ACD','rgb(106,90,205)']
             ]

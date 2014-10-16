@@ -24,7 +24,7 @@
 </head>
 <body ng-controller="mainCtrl">
   <div class="container">
-    
+
     <div class="page-header">
       <div class="btn-group">
           <label class="btn btn-primary" ng-model="radioModel" btn-radio="0">Name</label>
@@ -37,6 +37,7 @@
     </div>
 
     <div class="color-charts">
+      <p class="lead">Click on a Value to copy to your clipboard!</p>
       <div class="palette" ng-repeat="palette in colors">
         <h3>{{palette.title}}</h3>
         <div class="row">

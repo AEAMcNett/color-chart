@@ -148,11 +148,11 @@ and (orientation : landscape) {
   }
 }
 
-.color-box:focus {
+/*.color-box:focus {
   outline:none;
   }
 
 .color-box:hover {
   box-shadow: 5px 5px 0px #ccc;
   outline:none;
-  }
+  }*/
