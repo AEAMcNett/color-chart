@@ -6,30 +6,35 @@
   <title>CSS Color Chart</title>
   <link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet"/>
   <link rel="stylesheet" href="css/style.css">
-  <script src="js/angular.min.js"></script>
-  <script src="js/ui-bootstrap-0.11.2.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.11/angular.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.12.0/ui-bootstrap-tpls.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ng-clip/0.2.6/ng-clip.min.js"></script>
   <script src="http://cdnjs.cloudflare.com/ajax/libs/zeroclipboard/2.1.6/ZeroClipboard.min.js"></script>
-  <script src="http://rawgit.com/asafdav/ng-clip/master/src/ngClip.js"></script>
   <script src="js/app.js"></script>
   <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
   })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
   ga('create', 'UA-55608982-1', 'auto');
   ga('send', 'pageview');
 
-</script>
+  </script>
 </head>
 <body ng-controller="mainCtrl">
+
+  <div class="feedback-hidden" ng-class="cssShow">
+    <h3>You copied a color in your clipboard!</h3>
+  </div>
+
   <div class="container">
 
     <div class="page-header">
       <div class="btn-group">
-          <label class="btn btn-primary" ng-model="radioModel" btn-radio="0">Name</label>
-          <label class="btn btn-primary" ng-model="radioModel" btn-radio="1">HEX</label>
-          <label class="btn btn-primary" ng-model="radioModel" btn-radio="2">RGB</label>
+        <label class="btn btn-primary" ng-model="radioModel" btn-radio="0">Name</label>
+        <label class="btn btn-primary" ng-model="radioModel" btn-radio="1">HEX</label>
+        <label class="btn btn-primary" ng-model="radioModel" btn-radio="2">RGB</label>
       </div>
 
       <h1>CSS Color Chart</h1>
@@ -38,12 +43,13 @@
 
     <div class="color-charts">
       <div class="palette" ng-repeat="palette in colors"> <!--this is Angular code-->
+
         <h3>{{palette.title}}</h3>
         <div class="row">
-          <div class="box" ng-repeat="color in palette.colorArray">
-            <div clip-copy="color[radioModel]" ng-style="{'background-color': color[1]}" ng-model="black" class="color-box" >
+          <div class="box" ng-repeat="color in palette.colorArray" >
+            <div clip-copy="color[radioModel]" clip-click="showMessage()" ng-style="{'background-color': color[1]}" ng-model="black" class="color-box" >
               <span ng-class="{oscurita: changeColor(color[1])}"}>
-                    {{ color[radioModel] }}
+                {{ color[radioModel] }}
               </span>
             </div>
           </div>
@@ -54,8 +60,9 @@
   <div id="footer">
     <div class="container">
       <p class="muted credit">This footer is Aquamarine. The name value buttons are Royalblue and Cornflowerblue.
-      <br>Made in 2014 by <strong><a href="http://ainsleywagoner.com">Ainsley Wagoner</a></strong> and <strong><a href="https://twitter.com/iaranzadi">Imanol Aranzadi</a></strong>.</p>
+        <br>Made in 2014 by <strong><a href="http://ainsleywagoner.com">Ainsley Wagoner</a></strong> and <strong><a href="https://twitter.com/iaranzadi">Imanol Aranzadi</a></strong>.</p>
+      </div>
     </div>
-  </div>
-</body>
-</html>
+
+  </body>
+  </html>

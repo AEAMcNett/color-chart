@@ -1,10 +1,12 @@
+/* Styles go here */
+
 // this is for avoiding conflict with the ui-bootstrap library (do not touch)
 .nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
 
 @import url(http://fonts.googleapis.com/css?family=Karla:400,400italic,700,700italic);
 
 body {
-    font-family: 'Karla', sans-serif;
+  font-family: 'Karla', sans-serif;
 }
 
 h1, p {
@@ -34,15 +36,15 @@ hr {
 }
 
 .color-box {
-    color: #fff;
-    width: 130px;
-    height: 60px;
-    margin: 15px;
-    border: none;
-    text-align: center;
-    padding-top: 30px;
-    position: relative;
-    float: left;
+  color: #fff;
+  width: 130px;
+  height: 60px;
+  margin: 15px;
+  border: none;
+  text-align: center;
+  padding-top: 30px;
+  position: relative;
+  float: left;
 }
 
 .palette h1 {
@@ -75,18 +77,18 @@ hr {
 
 .container .credit {
   margin: 40px 0;
-a {
-  color: darkgray;
-}
+  a {
+    color: darkgray;
+  }
 }
 
 .color-box {
-    width: 155px;
-    height: 80px;
-    border-bottom-right-radius: 39px;
-    -webkit-border-bottom-right-radius: 39px;
-    -moz-border-bottom-right-radius: 39px;
-    border-bottom-right-radius: 39px;
+  width: 155px;
+  height: 80px;
+  border-bottom-right-radius: 39px;
+  -webkit-border-bottom-right-radius: 39px;
+  -moz-border-bottom-right-radius: 39px;
+  border-bottom-right-radius: 39px;
 }
 
 .btn-group {
@@ -150,9 +152,29 @@ and (orientation : landscape) {
 
 .color-box:focus {
   outline:none;
-  }
+}
 
 .color-box:hover {
   box-shadow: 5px 5px 0px #ccc;
   outline:none;
-  }
+}
+
+
+/*feedback when copied in clipboard style*/
+.feedback-hidden {
+  text-align: center;
+  background-color: RGBA(102, 51, 153, 0.5);
+  color: white;
+  height: 70px;
+  width: 100%;
+  padding-top: 0.5px;
+  position: fixed;
+  z-index: 999;
+  top: -70px;
+}
+
+.show{
+  z-index: 999;
+  position: fixed;
+  top: 0px;
+}
